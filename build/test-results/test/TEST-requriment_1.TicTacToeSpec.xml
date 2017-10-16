@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="requriment_1.TicTacToeSpec" tests="15" skipped="0" failures="0" errors="0" timestamp="2017-10-16T09:14:10" hostname="COM090" time="0.019">
+  <properties/>
+  <testcase name="givenLastTurnWasXWhenNextPlayerThenO" classname="requriment_1.TicTacToeSpec" time="0.002"/>
+  <testcase name="whenYOutsideBoardThenRuntimeException" classname="requriment_1.TicTacToeSpec" time="0.01"/>
+  <testcase name="whenPlayAndTopBottomDiagonalLineThenWinner" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenPlayAndWholeHorizontalLineThenWinner" classname="requriment_1.TicTacToeSpec" time="0.001"/>
+  <testcase name="whenXInsideBoard" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenYOutsideBoardThenRuntimeException1" classname="requriment_1.TicTacToeSpec" time="0.001"/>
+  <testcase name="whenYInsideBoard" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="givenFirstTurnWhenNextPlayerThenX" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenXOutsideBoardThenRuntimeException" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenPlayAndBottomTopDiagonalLineThenWinner" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenOccupiedThenRuntimeException" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenXOutsideBoardThenRuntimeException1" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenAllBoxesAreFilledThenDraw" classname="requriment_1.TicTacToeSpec" time="0.001"/>
+  <testcase name="whenPlayAndWholeVerticalLineThenWinner" classname="requriment_1.TicTacToeSpec" time="0.0"/>
+  <testcase name="whenPlayThenNoWinner" classname="requriment_1.TicTacToeSpec" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
