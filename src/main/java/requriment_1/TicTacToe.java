@@ -5,9 +5,12 @@ public class TicTacToe {
     public static final int SIZE = 3;
     private Character[][] board = {{'\0', '\0', '\0'}, {'\0', '\0', '\0'}, {'\0', '\0', '\0'}};
     private char lastPlayer;
+    private int currentX;
+    private int currentY;
 
     public String play(int x, int y) {
-
+        currentX = x;
+        currentY = y;
         checkAxis(x);
         checkAxis(y);
         lastPlayer = nextPlayer();
@@ -70,5 +73,34 @@ public class TicTacToe {
         if (lastPlayer == 'X')
             return 'O';
         return 'X';
+    }
+
+    public String OPlay() {
+        int x = 1;
+        int y = 1;
+        if((currentX != 2 || currentY != 2) && board[1][1] == '\0')
+            x = y = 2;
+        else if(board[0][0] == 'X') {
+            if ((currentX == 1 && currentY == 1 && board[0][1] == 'X') || (currentX == 1 && currentY == 2)) {
+                x = 1;
+                y = 3;
+            } else if ((currentX == 1 && currentY == 1) || currentX == 2 && currentY == 1) {
+                x = 3;
+                y = 1;
+            }
+        } else if(board[1][2] == 'X') {
+            if (currentX == 1 && currentY == 2) {
+                x = 1;
+                y = 1;
+            }
+        }  else if(board[2][1] == 'X') {
+            if (currentX == 2 && currentY == 1) {
+                x = 1;
+                y = 1;
+            }
+        }
+
+        play(x, y);
+        return "O play [" + x +", " + y +"]";
     }
 }
