@@ -76,31 +76,59 @@ public class TicTacToe {
     }
 
     public String OPlay() {
-        int x = 1;
-        int y = 1;
-        if((currentX != 2 || currentY != 2) && board[1][1] == '\0')
-            x = y = 2;
-        else if(board[0][0] == 'X') {
-            if ((currentX == 1 && currentY == 1 && board[0][1] == 'X') || (currentX == 1 && currentY == 2)) {
-                x = 1;
-                y = 3;
-            } else if ((currentX == 1 && currentY == 1) || currentX == 2 && currentY == 1) {
-                x = 3;
-                y = 1;
+
+        int x = 0;
+        int y = 0;
+        int playerTotal = lastPlayer * (SIZE - 1);
+        char diagonal1, diagonal2, horizontal, vertical;
+        diagonal1 = diagonal2 = horizontal = vertical = '\0';
+
+        for (int index = 0; index < SIZE; index++) {
+            diagonal1 += board[index][index];
+            diagonal2 += board[index][SIZE - index - 1];
+            horizontal += board[index][currentY - 1];
+            vertical += board[currentX - 1][index];
+        }
+
+        if(vertical == playerTotal) {
+            for(int i = 0; i < SIZE ; i ++) {
+                if(board[currentX - 1][i] == '\0') {
+                    x = currentX;
+                    y = i + 1;
+                }
             }
-        } else if(board[1][2] == 'X') {
-            if (currentX == 1 && currentY == 2) {
-                x = 1;
-                y = 1;
+        } else if(horizontal == playerTotal) {
+            for(int j = 0; j < SIZE; j++) {
+                if(board[j][currentY - 1] == '\0') {
+                    x = j + 1;
+                    y = currentY;
+                }
             }
-        }  else if(board[2][1] == 'X') {
-            if (currentX == 2 && currentY == 1) {
-                x = 1;
-                y = 1;
+        } else if(diagonal1 == playerTotal) {
+            for (int d1 = 0; d1 < SIZE; d1++) {
+                if( board[d1][d1] != '\0') {
+                    x = y = d1 + 1;
+                }
+            }
+        } else  if(diagonal2 == playerTotal) {
+            for (int d2 = 0; d2 < SIZE; d2++) {
+                if( board[d2][SIZE - d2 - 1] != '\0') {
+                    x = d2 + 1;
+                    y = SIZE - d2;
+                }
+            }
+        } else {
+            if((currentX != 2 || currentY != 2) && board[1][1] == '\0')
+                x = y = 2;
+            else {
+                x = y = 3;
             }
         }
 
-        play(x, y);
+        String result = play(x, y);
+        if("O is the winner".equals(result) || "The result is draw".equals(result))
+            return result;
+
         return "O play [" + x +", " + y +"]";
     }
 }
