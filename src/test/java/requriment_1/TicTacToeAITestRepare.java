@@ -99,7 +99,7 @@ public class TicTacToeAITestRepare {
     @Test
     public void tesEmptySpotIsNine() {
 
-        String[] emptySpots = tacToeAI.emptyIndexies(board);
+        int[] emptySpots = tacToeAI.emptyIndexies(board);
         assertEquals(9, emptySpots.length);
     }
 
@@ -107,7 +107,7 @@ public class TicTacToeAITestRepare {
     public void tesEmptySpotIsEight() {
 
         board[0] = "X";
-        String[] emptySpots = tacToeAI.emptyIndexies(board);
+        int[] emptySpots = tacToeAI.emptyIndexies(board);
         assertEquals(8, emptySpots.length);
     }
 
