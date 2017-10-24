@@ -1,9 +1,5 @@
 package requriment_1;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class TicTacToeAI {
@@ -31,7 +27,9 @@ public class TicTacToeAI {
     private String aiPlayer = "X";
 
     public int minimax(String[] newBoard, String player) {
+
         int[] availSpot = emptyIndexies(newBoard);
+
         if(winning(newBoard, aiPlayer))
             return 10;
         else if(winning(newBoard, huPlayer))
@@ -45,13 +43,15 @@ public class TicTacToeAI {
         for(int i = 0; i < availSpot.length; i++) {
 
             newBoard[availSpot[i]] = player;
+            moveIndex[i] = availSpot[i];
 
             if(player == aiPlayer) {
                 moveScope[i] = minimax(newBoard, huPlayer);
             } else {
-                moveScope[i] = minimax(newBoard, huPlayer);
+                moveScope[i] = minimax(newBoard, aiPlayer);
             }
 
+            newBoard[availSpot[i]] = String.valueOf(moveIndex[i]);
         }
 
         int bestMove = 0;
@@ -60,10 +60,18 @@ public class TicTacToeAI {
             for(int i = 0; i < moveScope.length; i++) {
                 if(moveScope[i] > bestScore) {
                     bestMove = i;
+                    bestScore = moveScope[i];
+                }
+            }
+        } else {
+            int bestScore = 10000;
+            for(int i = 0; i < moveScope.length; i++) {
+                if(moveScope[i] < bestScore) {
+                    bestMove = i;
+                    bestScore = moveScope[i];
                 }
             }
         }
-
 
         return moveIndex[bestMove];
     }

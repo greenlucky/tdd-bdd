@@ -58,6 +58,28 @@ public class TicTacToeAITest {
         assertEquals(4, actual);
     }
 
+    @Test
+    public void whenXPlayTopMidThenBestMoveOIsCenter() {
+        String player = "O";
+        board[1] = "X";
+        int actual = tacToeAI.minimax(board, player);
+        assertEquals(4, actual);
+    }
 
+    @Test
+    public void whenXPlayBottomLeftThenBestMoveOIsCenter() {
+        String player = "O";
+        board[6] = "X";
+        int actual = tacToeAI.minimax(board, player);
+        assertEquals(4, actual);
+    }
 
+    @Test
+    public void whenXPlayBottomLeftOPlayTopMidThenBestMoveXIsCenter() {
+        String player = "X";
+        board[6] = "X";
+        board[1] = "O";
+        int actual = tacToeAI.minimax(board, player);
+        assertEquals(4, actual);
+    }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tdd-bdd.iml" filepath="$PROJECT_DIR$/.idea/modules/tdd-bdd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tdd-bdd.iml" filepath="$PROJECT_DIR$/tdd-bdd.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tdd-bdd_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tdd-bdd_main.iml" group="tdd-bdd" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tdd-bdd_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tdd-bdd_test.iml" group="tdd-bdd" />
     </modules>
